@@ -1,0 +1,22 @@
+function submit1 (){
+    var a = document.getElementById("int").value;
+    
+    console.log(`Input element: ${a}`);
+    
+    function convertToBinary(x) {
+    var ans = 0;
+    var rem, int = 1, step = 1;
+    while (x != 0) {
+        rem = x % 2;
+        console.log(
+            `Step ${step++}: ${x}/2, Remainder = ${rem}, Quotient = ${parseInt(x/2)}`
+        );
+        x = parseInt(x / 2);
+        ans = ans + rem * int;
+        int = int * 10;
+        }
+    console.log(`Binary: ${ans}`);
+    document.getElementById("answer").value = ans;
+    }
+    convertToBinary(a);
+}

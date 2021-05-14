@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>  
+        <meta  charset="UTF-8">
+        <link rel="stylesheet" href="Palindrome.css">
+        <title> Palindrome Identifier </title>
+    </head>  
+    
+    <body>
+        <h2>Palindrome Identifier</h2> 
+        <h3>Input a string</h3>
+        <form class = "fillupform">
+        <div class="word">
+            <label for="word">Please Input a string: </label> <br> <br> <br>
+            <input type="text" id="word" name="word">
+        </div>
+            <br> <br>
+        <div class="input-container">
+            <input class="Submit" type="button" onclick="submit1()" value="Submit">
+        </div>
+            <br> <br> <br> <br>
+        <div class="Answer">
+            <label for="answer">Evaluation Result:</label>
+            <input id="answer" type="text" name="answer">
+          </div>
+        </form>
+        <script src="Palindrome.js" charset="utf-8"></script>        
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+      <meta  charset="UTF-8">
+      <link rel="stylesheet" href="test.css">
+      <title> Philippine Income Tax Computation</title>
+    </head> 
+<body>
+        <h2>Philippine Income Tax Computation Calculator</h2> 
+        <h3>Please Fill up the following questions.</h3> <br>
+        <form class = "fillupform">
+            <div class="MonthlyIncome">
+                <label for="monthlyincome">Please Input your Monthly Income:</label> <br>
+                <input type="number" id="monthlyincome" name="monthlyincome" min="1" max="1,000,000,000,000">
+              </div>
+
+              <br> <br>
+            
+            <div class="Dependents">
+                <label for="dependents">Please Input your the Number of Dependents:</label><br>
+                <input id="dependents" type="number" name="dependents" placeholder=""> <br> 
+                <small><em> Note: Old parents and children 21 below only</em></small> 
+              </div>
+
+              <div class="Government">
+                <br><label>Are you a Government Worker?</label>
+                <p>
+                  <input type="radio" id="yes" name="yes_no" value="yes">
+                  <label for="yes">Yes</label>
+                  <input type="radio" id="no" name="yes_no" value="no">
+                  <label for="no">No</label>
+                </p>  
+              </div>
+
+              <br> <br>
+
+              <div class="input-container">
+                <input class="button" type="button" value="Calculate Tax" onclick="button1()"> 
+              </div>
+
+              <br> <br> <br>
+
+              <div class="payabletax">
+                <label for="payabletax">Payable Tax:</label>
+                <input id="payabletax" type="number" name="payabletax">
+              </div>
+          </form>
+          <script src="js2.js" charset="utf-8"></script>
+    </body>
+</html>

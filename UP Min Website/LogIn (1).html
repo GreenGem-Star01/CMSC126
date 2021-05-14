@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>University of the Philippines Mindanao</title>
+        <!-- Linking of JQuery for the codes -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="onedot\jquery-ui1.css">
+        <link rel="stylesheet" href="try.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        
+    </head>
+    <!-- Codes for the body -->
+    <body>
+        <header> 
+        <a href="Home.html">  
+        <img href="Home.html" class="logo" src="logo2.png" alt="Logo" itemprop="logo"></h2>
+        </a> 
+            <h2> <!-- insert header contents here --> </h2>
+            <div class="navigation">
+                <a href="Home.html" title="Home">Home</a>
+                <a href="Academic_Units.html" title="acadUnits">Academic Units</a>
+                <a href="Academic_Programs.html" title="acadProg">Academic Programs</a>
+                <a href="LogIn.html" title="logIn">Log-In</a>
+            </div>
+        </header>
+        <section> 
+            <div class="container">
+                <div class="content"> 
+                    <center>
+                        <h4>University of the Philippines Mindanao</h4>
+                        <form class = "fillupform">
+                          <h5>CREATE YOUR ACCOUNT</h5>
+                                <input type="text" id="Firstname" name="Firstname" placeholder="First Name" class="auto-save form-control"><br>
+                                <input type="text" id="Middlename" name="Middlename" placeholder="Middle Name" class="auto-save form-control"><br>  
+                                <input type="text" id="Lastname" name="Lastname" placeholder="Last Name" class="auto-save form-control"><br>
+                                
+                                <div class="Gender">
+                                <input type="checkbox" id="male" name="male_female" value="Male" class="auto-save form-control">
+                                <label for="male">Male</label>
+                                <input type="checkbox" id="female" name="male_female" value="Female" class="auto-save form-control">
+                                <label for="female">Female</label> 
+                                </div>
+                              <div class="birthday">
+                                <input type="text" id="birthdate" placeholder="Select Date of Birth" name="birthdate" class="auto-save form-control">
+                              </div>
+                              <div class="Province">
+                                <input type="text" id="province" name="province" placeholder="Province"class="auto-save form-control">
+                              </div>
+                              <div class="YearLevel">
+                                <input type="spinner" id="yearlevel" name="yearlevel" placeholder="Year Level" class="auto-save form-control"><br>
+                              </div>
+                              <h7 class="yearlevel">*For Masters, choose 5 **For PhD, choose 6</h7>
+                              <div class="input-container">
+                                <input class="submit" type="button" value="SUBMIT"> 
+                              </div>
+                          </form>
+                         <script>
+                           $(document).ready(function() {
+                            $(".input-container").on("click", function(){    
+                            
+                            //Constants
+                            const firstname = document.getElementById("Firstname");
+                            const middlename = document.getElementById("Middlename");
+                            const lastname = document.getElementById("Lastname");
+                            const male = document.getElementById("male");
+                            const female = document.getElementById("female");
+                            const birthdate = document.getElementById("birthdate");
+                            const province = document.getElementById("province");
+                            const yearlevel = document.getElementById("yearlevel");
+                
+                            if($("input[type=checkbox]:checked").length===1){
+                            
+                              if(document.getElementById("male").checked){
+                              // This variable stores all the data.
+                              let data = 
+                              
+                              "\r First Name: " +firstname.value + " \r\n " + 
+                              "Middle Name: " + middlename.value + " \r\n " +
+                              "Last Name: " + lastname.value + " \r\n " + 
+                              "Gender: " + male.value + " \r\n " + 
+                              "Birthdate: " + birthdate.value + " \r\n " +
+                              "Province: " + province.value + " \r\n " +
+                              "Year Level:" + yearlevel.value;
+                            
+                              // Convert the text to BLOB.
+                              const textToBLOB = new Blob([data], { type: "text/plain" });
+                              const sFileName = "SignupData.txt";	   // The file to save the data.
+                
+                              let newLink = document.createElement("a");
+                              newLink.download = sFileName;
+                            
+                              if (window.webkitURL != null) {
+                              newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+                              }
+                              else {
+                              
+                                newLink.href = window.URL.createObjectURL(textToBLOB);
+                              newLink.style.display = "none";
+                              document.body.appendChild(newLink);
+                              }
+                            newLink.click(); 
+                          } 
+                           
+                          else{
+                            let data2 =
+                            "\r Last Name: " + lastname.value + " \r\n " + 
+                            "First Name: " +firstname.value + " \r\n " + 
+                            "Middle Name: " + middlename.value + " \r\n " + 
+                            "Gender: " + female.value + " \r\n " + 
+                            "Birthdate: " + birthdate.value + " \r\n " +
+                            "Province: " + province.value + " \r\n " +
+                            "Year Level:" + yearlevel.value;
+                
+                            // Convert the text to BLOB.
+                            const textToBLOB = new Blob([data2], { type: "text/plain" });
+                              const sFileName = "SignupData.txt";	   // The file to save the data.
+                
+                              let newLink = document.createElement("a");
+                              newLink.download = sFileName;
+                            
+                              if (window.webkitURL != null) {
+                              newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+                              }
+                              
+                              else {
+                              newLink.href = window.URL.createObjectURL(textToBLOB);
+                              newLink.style.display = "none";
+                              document.body.appendChild(newLink);
+                              }
+                            newLink.click(); 
+                          }
+                          console.log("Data is saved.");
+                        }
+                        
+                        else{
+                            alert("Check one box only in Gender Section");
+                        }         
+                      });
+                
+                      $("input[type=checkbox]").checkboxradio();
+                      $("#birthdate").datepicker({
+                        numberOfMonths:1,
+                        changeYear:true,
+                        changeMonth:true,
+                        yearRange: "1940:2021"
+                      });
+                
+                      var provs = ["Zamboanga Del Norte","Zamboanga del Sur","Zamboanga Sibugay","Camiguin", "Bukidnon", "Lanao Del Norte", "Misamis Oriental","Misamis Occidental"
+                        ,"Davao de Oro","Davao del Norte","Davao del Sur","Davao Oriental","Davao Occidental","South Cotabato","Cotabato","Sultan Kudarat","Sarangani","Agusan del Norte",
+                        "Agusan del Sur","Surigao del Norte","Surigao del Sur","Dinagat Islands","Basilan","Lanao del Sur","Maguindanao","Sulu","Tawi-Tawi"]
+                        $("#province").autocomplete({
+                          source: provs
+                        },
+                        {
+                          delay:0,
+                          minLength:1
+                        });           
+                            
+                        $("#yearlevel").spinner({
+                          min: 1,
+                          max: 6
+                        });
+                      });
+                    </script>
+                  </center>
+            <!-- Select Menu Code -->
+    </section>
+    <script>  
+        $(function() {  
+          $( "#speed" ).selectmenu();  
+        });  
+        </script>
+    </body>
+</html>

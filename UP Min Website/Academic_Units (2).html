@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>University of the Philippines Mindanao</title>
+        <!-- Linking of JQuery for the codes -->
+        <link rel="stylesheet" href="try.css"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <link href="http://github.felixnagel.com/selectmenu/themes/base/jquery.ui.core.css" rel="stylesheet"/>
+        <link href="http://github.felixnagel.com/selectmenu/themes/base/jquery.ui.theme.css" rel="stylesheet"/>
+        <link href="http://github.felixnagel.com/selectmenu/themes/base/jquery.ui.selectmenu.css" rel="stylesheet"/>
+        <script src="http://github.felixnagel.com/selectmenu/ui/jquery.ui.core.js"></script>
+        <script src="http://github.felixnagel.com/selectmenu/ui/jquery.ui.widget.js"></script>
+        <script src="http://github.felixnagel.com/selectmenu/ui/jquery.ui.position.js"></script>
+        <script src="http://github.felixnagel.com/selectmenu/ui/jquery.ui.selectmenu.js"></script>
+        <script>
+           
+            $( function() {
+            $('#CSM').hide();
+            $('#CHS').hide();
+            $('#SM').hide();
+            $( "#category" ).selectmenu();
+            $('#category').change(function(){
+                var value=$(this).val(); 
+                $('.information').empty().append(($('#'+value).html()));
+            });
+            });
+        </script>
+    </head>
+    <!-- Codes for the body -->
+    <body>
+        <header> 
+        <a href="Home.html">  
+        <img href="Home.html" class="logo" src="logo2.png" alt="Logo" itemprop="logo"></h2>
+        </a> 
+            <h2> <!-- insert header contents here --> </h2>
+            <div class="navigation">
+                <a href="Home.html" title="Home">Home</a>
+                <a href="Academic_Units.html" title="acadUnits">Academic Units</a>
+                <a href="Academic_Programs.html" title="acadProg">Academic Programs</a>
+                <a href="LogIn.html" title="logIn">Log-In</a>
+            </div>
+        </header>
+        <section> 
+            <div class="container">
+                <div class="content">   
+            <!-- Beginning of code for the selectmenu-->
+            <form action="#">
+                <fieldset>
+                <label for="preference">Choose a College</label>
+                <select name="category" id="category">
+                    <option disabled selected>Select your option</option>
+                    <option value="CSM">College of Science & Mathematics</option>
+                    <option value="CHS">College of Humanities & Social Sciences</option>
+                    <option value="SM">School of Management</option>
+                </select>
+                </fieldset>
+            </form>
+            <br>
+            <div class="information">
+            
+            </div>
+            <div id="CSM">
+                <h2>College of Science & Mathematics</h2>
+                <h3>College Departments</h3>
+                <a href="https://dmpcs.upmin.edu.ph/news-and-events" target="_blank" title="dmpcs"><h4>Department of Mathematics, Physics & Computer Science</h4></a>
+                <p>
+                    The DMPCS is the largest department of the College of Science and Mathematics, UP Mindanao. It offers two of the four undergraduate degree programs in the College. Around fifty percent (50%) of the College's faculty members and students belongs to the department.
+
+                    <br><br>Its degree programs are the Bachelor of Science in Computer Science (BSCS) and the Bachelor of Science in Applied Mathematics (BSAM).
+                </p>
+                <h3>Programs Offered</h3>
+                <p>
+                    BS Applied Mathematics <br>
+                    BS Biology <br>
+                    BS Computer Science <br>
+                    BS Food Technology <br>
+                    MS Food Science <br>
+                </p>
+                <h4>Facebook Page</h4>
+                <a href="https://www.facebook.com/csmupmin/" target="_blank" title="upcsm"><h5>College of Science and Mathematics - UP Mindanao</h5></a>
+            </div>
+
+            <div id="CHS">
+                <h2>College of Humanities & Social Sciences</h2>
+                <h3>Programs Offered</h3>
+                <p>
+                    BS Anthropology <br>
+                    BS Architecture <br>
+                    BA Communication and Media Arts <br>
+                    BA English <br>
+                    Diploma in Exercise and Sports Science <br>
+                    Diploma/Master in Urban and Regional Planning <br>
+                </p>
+                <h4>Facebook Page</h4>
+                <a href="https://www.facebook.com/HumanitiesUPMin/about/?ref=page_internal" target="_blank" title="dmpcs"><h5>Department of Humanities, UP Mindanao</h5></a>
+                
+            </div>
+            <div id="SM">
+                <h2>School of Management</h2>
+                <h3>Programs Offered</h3>
+                <p>
+                    BS Agribusiness Economics <br>
+                    Master in Management <br>
+                    PhD by Research <br>
+                </p>
+                <h4>Facebook Page</h4>
+                <a href="https://www.facebook.com/upschoolofmanagement" target="_blank" title="upsm"><h5>UP Mindanao School of Management</h5></a>
+            </div>
+            </div> 
+            <!-- Select Menu Code -->
+    </section>
+    <script>  
+        $(function() {  
+          $( "#speed" ).selectmenu();  
+        });  
+        </script>
+    </body>
+</html>

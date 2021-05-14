@@ -1,0 +1,19 @@
+function submit1 () {
+    var a = document.getElementById("word").value;
+    console.log ("Hello world");
+
+    function checkPalindrome(a) {
+        const l = a.length;
+
+        for (let i = 0; i < l / 2; i++) {
+    
+            if (a[i] !== a[l - 1 - i]) {
+                return 'It is not a palindrome';
+            }
+        }
+        return 'It is a palindrome';
+    }
+    const ans = checkPalindrome(a); 
+    console.log(ans);
+    document.getElementById("answer").value = ans;
+}

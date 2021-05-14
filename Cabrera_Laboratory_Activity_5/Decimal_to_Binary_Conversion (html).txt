@@ -1,0 +1,28 @@
+<html lang="en">
+    <head>  
+        <meta  charset="UTF-8">
+        <link rel="stylesheet" href="Decimal_to_Binary_Conversion.css">
+        <title> Decimal to Binary Conversion </title>
+    </head>  
+    
+    <body>
+        <h2>Decimal to Binary Conversion</h2> 
+        <h3>Input a positive integer.</h3>
+        <form class = "fillupform">
+        <div class="posint">
+            <label for="int">Please Input your Monthly Income:</label> <br> <br> <br>
+            <input type="number" id="int" name="int" min="0" max="1,000,000,000,000">
+        </div>
+            <br> <br>
+        <div class="input-container">
+            <input class="Submit" type="button" onclick="submit1()" value="Submit">
+        </div>
+            <br> <br> <br> <br>
+        <div class="Answer">
+            <label for="answer">Conversion Result:</label>
+            <input id="answer" type="number" name="answer">
+          </div>
+        </form>
+        <script src="Decimal_to_Binary Conversion_(JS).js" charset="utf-8"></script>        
+    </body>
+</html>
